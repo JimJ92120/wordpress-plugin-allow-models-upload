@@ -1,0 +1,11 @@
+{
+  "name": "wordpress-plugin-allow-models-upload",
+  "version": "0.1.0",
+  "scripts": {
+    "wp-env": "wp-env",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@wordpress/env": "^5.9.0"
+  }
+}
