@@ -13,6 +13,7 @@
 
 add_filter('upload_mimes', function($mime_types) {
     $mime_types['gltf'] = 'model/gltf+json';
+    $mime_types['glb'] = 'model/gltf-binary';
 
     return $mime_types;
 });
@@ -26,6 +27,11 @@ add_filter('wp_check_filetype_and_ext', function($data, $file, $filename, $mime_
         if ('gltf' === $file_type['ext']) {
             $data['ext']  = 'gltf';
             $data['type'] = 'model/gltf+json';
+        }
+
+        if ('glb' === $file_type['ext']) {
+            $data['ext']  = 'glb';
+            $data['type'] = 'model/glb-binary';
         }
     }
 
