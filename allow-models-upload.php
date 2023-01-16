@@ -10,3 +10,24 @@
  * Requires at least:   5.9
  * Requires PHP:        7.4
  */
+
+add_filter('upload_mimes', function($mime_types) {
+    $mime_types['gltf'] = 'model/gltf+json';
+
+    return $mime_types;
+});
+
+add_filter('wp_check_filetype_and_ext', function($data, $file, $filename, $mime_types, $real_mime_type) {
+    if (empty($data['ext'])
+        || empty($data['type'])
+    ) {
+        $file_type = wp_check_filetype($filename, $mime_types);
+
+        if ('gltf' === $file_type['ext']) {
+            $data['ext']  = 'gltf';
+            $data['type'] = 'model/gltf+json';
+        }
+    }
+
+    return $data;
+}, 10, 5);
