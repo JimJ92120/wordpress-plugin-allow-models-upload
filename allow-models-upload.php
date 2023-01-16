@@ -2,7 +2,7 @@
 /**
  * Plugin Name:         Allow Models Upload
  * 
- * Description:         Allow <em>.gltf</em> and <em>.glb</em> files to be uploaded into WordPress Media Library.
+ * Description:         Allow users to upload <em>.gltf</em> and <em>.glb</em> files into WordPress Media Library.
  * Author:              JimJ92120
  * Author URI:          https://github.com/JimJ92120
  * 
